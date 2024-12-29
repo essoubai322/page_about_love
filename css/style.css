@@ -1,0 +1,178 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Hearts container and animation */
+.hearts-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: float-heart 6s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+/* Main content styles */
+.main-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    text-align: center;
+}
+
+.title {
+    color: white;
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+    animation: pulse 2s infinite;
+}
+
+/* Photo gallery styles */
+.floating-photos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0;
+    padding: 0 2rem;
+}
+
+.photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    animation: float 6s ease-in-out infinite;
+}
+
+.photo:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Letter styles */
+.letter-container {
+    margin-top: 3rem;
+}
+
+.love-letter-btn {
+    background: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.love-letter-btn:hover {
+    transform: scale(1.05);
+    background: #fff5f5;
+}
+
+.heart-icon {
+    font-size: 1.5rem;
+}
+
+.love-letter {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+.love-letter.show {
+    transform: scale(1);
+}
+
+.letter-content {
+    color: #333;
+    line-height: 1.6;
+}
+
+.letter-content h2 {
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+}
+
+.letter-content p {
+    margin-bottom: 1rem;
+}
+
+.signature {
+    font-style: italic;
+    text-align: right;
+    color: #ff6b6b;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes float-heart {
+    0% {
+        transform: translateY(100vh) translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) translateX(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Photo animation delays */
+.photo:nth-child(1) { animation-delay: 0s; }
+.photo:nth-child(2) { animation-delay: 1s; }
+.photo:nth-child(3) { animation-delay: 2s; }
+.photo:nth-child(4) { animation-delay: 3s; }
+.photo:nth-child(5) { animation-delay: 4s; }
+.photo:nth-child(6) { animation-delay: 5s; }
+.photo:nth-child(7) { animation-delay: 6s; }
+.photo:nth-child(8) { animation-delay: 7s; }
